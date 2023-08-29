@@ -22,34 +22,52 @@
       $v1 = $_GET["op1"];
       $v2 = $_GET["op2"];
       $operacao = $_GET["operacao"];
+
+      function soma ($v1, $v2) {
+        return $v1 + $v2;
+      }
+
+      function subtrai ($v1, $v2) {
+        return $v1 - $v2;
+      }
+
+      function multiplicar($v1, $v2) {
+        return $v1 * $v2;
+      }
+
+      function dividir($v1, $v2) {
+        return $v1 / $v2;
+      }
+
         switch ($operacao) {
           case 1:
-            $result = $v1 + $v2;
-            if($v1 != NULL) {
+            $result = soma($v1, $v2);
+            if ($result) {
               echo "<h2>O resultado de $v1 + $v2 = $result</h2>";
             }
             break;
           
           case 2:
-            $result = $v1 - $v2;
+            $result = subtrai($v1, $v2);
             if ($result) {
               echo "<h2>O resultado de $v1 - $v2 = $result</h2>";
             }
             break;
 
           case 3:
-            $result = $v1 * $v2;
+            $result = multiplicar($v1, $v2);
             if ($result) {
               echo "<h2>O resultado de $v1 x $v2 = $result</h2>";
             }
             break;
 
           case 4:
-            $result = $v1 / $v2;
+            $result = dividir($v1, $v2);
             if ($result) {
               echo "<h2>O resultado de $v1 / $v2 = $result</h2>";
             }
         }
+        
     ?>
   </body>
 </html>
